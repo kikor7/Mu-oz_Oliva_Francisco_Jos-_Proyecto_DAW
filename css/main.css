@@ -1,0 +1,102 @@
+#logo-empresa {
+  height: 200px;
+}
+.navbar-brand {
+  color: rgb(2, 102, 51);
+}
+.nav-link {
+  color: rgb(2, 102, 51);
+}
+.d.flex {
+  background-color: white;
+}
+.navbar{
+  background-color: white;
+}
+.estilo-nav {
+  background-color: rgb(231, 247, 190);
+}
+
+.link-subrayado {
+  text-decoration: underline;
+  color: rgba(70, 87, 241, 0.885);
+}
+.boton-carrito {
+  margin-left: 25px;
+  font-size: 20px;
+  margin-top: 3px;
+  margin-right: 20px;
+}
+
+/*icono de señalizacion*/
+i.bi bi-hand-index-thumb {
+  transform: rotateZ(90deg);
+}
+
+.boton-menu {
+  background-color: white;
+  border: 0;
+  color: rgb(2, 102, 51);
+}
+
+.boton-menu:hover {
+  background-color: rgb(231, 247, 190);
+}
+
+.boton-menu:focus{
+  background-color: rgb(231, 247, 190);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  background-color: rgb(231, 247, 190);
+  margin-top: 50px;
+}
+
+.boton-inicio-sesion {
+  background-color: rgb(231, 247, 190);
+  color: rgb(2, 102, 51);
+}
+
+.boton-registro-sesion {
+  background-color: rgb(231, 247, 190);
+  color: rgb(2, 102, 51);
+}
+
+.titulo-principal-categorias{
+  color: rgb(2, 102, 51);
+}
+.producto-detalles{
+  background-color: rgb(231, 247, 190);
+  color: rgb(2, 102, 51);
+  
+}
+.contenido-productos{
+  border: 1px solid rgb(0,0,0);
+  background-color: rgb(231, 247, 190);
+  padding:10px;
+}
+.img-fluid{
+  border: 1px solid rgb(0,0,0);
+
+}
+.btn-outline-success{
+  background-color: white;
+  color: rgb(2, 102, 51);
+}
+.color-info-inicio-sesion{
+  color:red;
+  
+}
+.filtro{
+  display:none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
