@@ -1,5 +1,3 @@
-import { agregarProductoCarrito } from "./carrito";
-
 let botonTodos = document.querySelector(".boton-todos");
 botonTodos.addEventListener("click", TodosLosProductosPorDefecto);
 
@@ -94,8 +92,11 @@ botonHerramientas.addEventListener("click", cambiarContenidoHerramientas);
 
 ];
 function TodosLosProductosPorDefecto() {
+  
   let contenedor = document.querySelector(".contenido-productos");
   let titulo = document.querySelector(".titulo-principal-categorias");
+  console.log (contenedor);
+  console.log (titulo);
 // Limpiar el contenedor
 contenedor.innerHTML = "";
 titulo.textContent = "Todos los productos";
@@ -118,7 +119,7 @@ for (let objeto of productos) {
     //Creamos el boton
     let b = document.createElement("button");
     b.className = "btn btn-outline-success producto-agregar mb-3";
-    b.addEventListener("click",agregarProductoCarrito);
+   
     b.textContent = "Agregar";
     // Añadir los elementos al div del objeto
     div.appendChild(img);
@@ -245,4 +246,5 @@ for (let objeto of productos) {
     contenedor.appendChild(div);
   }
 }};
+
 

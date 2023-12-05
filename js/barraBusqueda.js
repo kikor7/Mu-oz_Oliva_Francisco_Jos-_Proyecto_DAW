@@ -16,18 +16,20 @@ document.addEventListener('keyup', (e) => {
         });
 
         if (contador === productos.length) {
-
             const nuevoContenedor = document.querySelector(".contenido-productos");
             const div = document.createElement("div");
             div.className = " container col-12 producto-detalles text-center";
 
             const img = document.createElement("img");
-            img.className = "img-fluid";
+            img.className = "img-fluid quitar";
             img.src = "img/producto-no-encontrado.png";
 
             div.appendChild(img);
             nuevoContenedor.appendChild(div);
         }
-    }
+        if(contador === 0) {
+            var imagen = document.queryselector(".quitar");
+            imagen.remove();
+    }}
 });
 
