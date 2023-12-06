@@ -1,5 +1,17 @@
+let campo = document.querySelector(".buscador");
+
+// Añadir un evento keydown al campo
+campo.addEventListener("keydown", function(event) {
+  // Comprobar si la tecla pulsada es enter
+  if (event.keyCode == 13) {
+    // Cancelar el comportamiento por defecto del navegador al hacer enter
+    event.preventDefault();
+  }
+});
+
 document.addEventListener('keyup', (e) => {
     if (e.target.matches('.buscador')) {
+        e.preventDefault();
         let contador = 0;
         const productos = document.querySelectorAll('.producto-detalles');
 
