@@ -16,6 +16,13 @@ document.querySelector('form').addEventListener('submit', e => {
     const data = Object.fromEntries(new FormData(e.target))
     let credenciales = localStorage.getItem('listaUsuarios');
     credenciales = JSON.parse(credenciales);
+    if(!credenciales){
+        let contenedor = document.querySelector(".tab-content");
+        let p = document.createElement("p");
+        p.textContent = "No tenemos usuarios registrados";
+        p.className = "text-end color-info-inicio-sesion quitarInfo";
+        contenedor.appendChild(p);
+    }
     for (let i = 0; i < credenciales.length; i++) {
         if (credenciales[i].correo === data.correo && credenciales[i].contraseña === data.contraseña) {
             window.location.href = "index.html";
