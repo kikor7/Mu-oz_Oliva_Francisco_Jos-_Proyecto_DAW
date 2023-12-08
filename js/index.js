@@ -291,7 +291,7 @@ function mostrarCarrito(){
   );
 
   let botonQuitarTodo = document.createElement("button");
-  botonQuitarTodo.textContent = "Quitar todo";
+  botonQuitarTodo.textContent = "Proceder a comprar";
   botonQuitarTodo.classList.add("btn");
   botonQuitarTodo.onclick = (vaciarCarrito);
   contenedor.appendChild(botonQuitarTodo);
