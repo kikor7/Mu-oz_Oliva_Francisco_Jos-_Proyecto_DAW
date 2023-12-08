@@ -161,6 +161,7 @@ for (let objeto of productos) {
     //Creamos el boton
     let b = document.createElement("button");
     b.className = "btn btn-outline-success producto-agregar mb-3";
+    b.addEventListener("click", agregarProducto);
     b.textContent = "Agregar";
     // Añadir los elementos al div del objeto
     div.appendChild(img);
@@ -199,6 +200,7 @@ for (let objeto of productos) {
     //Creamos el boton
     let b = document.createElement("button");
     b.className = "btn btn-outline-success producto-agregar mb-3";
+    b.addEventListener("click", agregarProducto);
     b.textContent = "Agregar";
     // Añadir los elementos al div del objeto
     div.appendChild(img);
@@ -238,6 +240,7 @@ for (let objeto of productos) {
     //Creamos el boton
     let b = document.createElement("button");
     b.className = "btn btn-outline-success producto-agregar mb-3";
+    b.addEventListener("click", agregarProducto);
     b.textContent = "Agregar";
     // Añadir los elementos al div del objeto
     div.appendChild(img);
