@@ -89,6 +89,10 @@ body {
   background-color: white;
   color: rgb(2, 102, 51);
 }
+.producto-agregar:focus{
+
+  background-color:  rgb(231, 247, 190);;
+}
 .color-info-inicio-sesion{
   color:red;
   

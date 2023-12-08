@@ -13,7 +13,6 @@ botonHerramientas.addEventListener("click", cambiarContenidoHerramientas);
 let botonCarrito = document.querySelector(".boton-carrito");
 botonCarrito.addEventListener("click", mostrarCarrito);
 
-
  // Array con los datos de los productos
  let productos = [
   {
@@ -122,7 +121,7 @@ for (let objeto of productos) {
     //Creamos el boton
     let b = document.createElement("button");
     b.className = "btn btn-outline-success producto-agregar mb-3";
-   
+    b.addEventListener("click", agregarProducto);
     b.textContent = "Agregar";
     // Añadir los elementos al div del objeto
     div.appendChild(img);
@@ -250,8 +249,32 @@ for (let objeto of productos) {
   }
 }};
 
+let productosAgregados = [];
+
+function agregarProducto(event) {
+	const b = event.srcElement;
+  console.log(b.parentNode);
+  if(b && b.parentNode) {
+  	productosAgregados.push(b.parentNode);
+    numeroEnCesta = productosAgregados.length
+    
+    let p = document.createElement("p");
+    p.textContent = numeroEnCesta;
+    let botonCarrito = document.querySelector(".boton-carrito");
+    botonCarrito.appendChild(p);
+  
+}}
+
 function mostrarCarrito(){
-  let contenedor = document.querySelector(".contenido-productos");
+  if (productosAgregados.length > 0) {
+    let contenedor = document.querySelector(".contenido-productos");
+    contenedor.innerHTML = "";
+
+  productosAgregados.map((producto) => 
+  contenedor.appendChild(producto)
+  );
+}else{
+let contenedor = document.querySelector(".contenido-productos");
   let titulo = document.querySelector(".titulo-principal-categorias");
 // Limpiar el contenedor
 contenedor.innerHTML = "";
@@ -262,14 +285,8 @@ let p = document.createElement("p");
 p.textContent = "Carrito vacio!";
 let svg= document.createElement("svg");
 svg.innerHTML = `<svg style= "width:1em; height:3em; margin-left:5px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#FFCC4D" d="M36 18c0 9.941-8.059 18-18 18c-9.94 0-18-8.059-18-18C0 8.06 8.06 0 18 0c9.941 0 18 8.06 18 18"></path><path fill="#664500" d="M17.312 17.612a.501.501 0 0 0-.61-.014c-.012.009-1.26.902-3.702.902c-2.441 0-3.69-.893-3.7-.9a.5.5 0 0 0-.757.603c.06.135 1.5 3.297 4.457 3.297c2.958 0 4.397-3.162 4.457-3.297a.498.498 0 0 0-.145-.591zm10 0a.5.5 0 0 0-.61-.014c-.012.009-1.261.902-3.702.902c-2.44 0-3.69-.893-3.7-.9a.5.5 0 0 0-.757.603c.06.135 1.5 3.297 4.457 3.297c2.958 0 4.397-3.162 4.457-3.297a.498.498 0 0 0-.145-.591zM22 28h-8a1 1 0 1 1 0-2h8a1 1 0 1 1 0 2zM6 14a1 1 0 0 1-.004-2c.156-.002 3.569-.086 6.205-3.6a1 1 0 0 1 1.6 1.2C10.538 13.95 6.184 14 6 14zm24 0c-.184 0-4.537-.05-7.8-4.4a1 1 0 1 1 1.599-1.2c2.641 3.521 6.061 3.599 6.206 3.6c.55.006.994.456.991 1.005A.996.996 0 0 1 30 14z"></path></g></svg>`;
-
-
 div.appendChild(p);
 p.appendChild(svg);
 contenedor.appendChild(div);
-};
-
-
-
-
+}};
 
