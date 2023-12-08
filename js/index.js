@@ -251,6 +251,7 @@ for (let objeto of productos) {
 
 let productosAgregados = [];
 
+
 function agregarProducto(event) {
 	const b = event.srcElement;
   console.log(b.parentNode);
@@ -263,7 +264,7 @@ if (numeroEnCesta >1) {
   p2.remove();
   let p = document.createElement("p");
   p.textContent = numeroEnCesta;
-  p.className = "numero-en-cesta";
+  p.className = "numero-en-cesta numerito-cesta";
   let botonCarrito = document.querySelector(".boton-carrito");
   botonCarrito.appendChild(p);
   
@@ -279,10 +280,19 @@ function mostrarCarrito(){
   if (productosAgregados.length > 0) {
     let contenedor = document.querySelector(".contenido-productos");
     contenedor.innerHTML = "";
+    let titulo = document.querySelector(".titulo-principal-categorias");
+    titulo.textContent = "Su carrito";
 
   productosAgregados.map((producto) => 
   contenedor.appendChild(producto)
   );
+
+  let botonQuitarTodo = document.createElement("button");
+  botonQuitarTodo.textContent = "Quitar todo";
+  botonQuitarTodo.classList.add("btn");
+  botonQuitarTodo.onclick = (vaciarCarrito);
+  contenedor.appendChild(botonQuitarTodo);
+
 }else{
 let contenedor = document.querySelector(".contenido-productos");
   let titulo = document.querySelector(".titulo-principal-categorias");
@@ -299,4 +309,10 @@ div.appendChild(p);
 p.appendChild(svg);
 contenedor.appendChild(div);
 }};
+
+function vaciarCarrito(){
+location.reload();
+}
+
+
 
