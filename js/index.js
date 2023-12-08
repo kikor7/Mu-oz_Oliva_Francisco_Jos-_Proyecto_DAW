@@ -257,13 +257,23 @@ function agregarProducto(event) {
   if(b && b.parentNode) {
   	productosAgregados.push(b.parentNode);
     numeroEnCesta = productosAgregados.length
-    
-    let p = document.createElement("p");
-    p.textContent = numeroEnCesta;
-    let botonCarrito = document.querySelector(".boton-carrito");
-    botonCarrito.appendChild(p);
+}
+if (numeroEnCesta >1) {
+  let p2 = document.querySelector(".numero-en-cesta");
+  p2.remove();
+  let p = document.createElement("p");
+  p.textContent = numeroEnCesta;
+  p.className = "numero-en-cesta";
+  let botonCarrito = document.querySelector(".boton-carrito");
+  botonCarrito.appendChild(p);
   
+} else{  let p = document.createElement("p");
+p.textContent = numeroEnCesta;
+p.className = "numero-en-cesta";
+let botonCarrito = document.querySelector(".boton-carrito");
+botonCarrito.appendChild(p);
 }}
+
 
 function mostrarCarrito(){
   if (productosAgregados.length > 0) {

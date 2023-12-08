@@ -104,3 +104,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.numero-en-cesta{
+  color:black;
+  text-decoration: none;
+  font-size: 0.5em;
+  position:relative;
+  top: -18px;
+  left: 20px;
+  border-radius: 50px; /* la mitad del ancho y el alto */
+  border:1px solid black;
+  text-align: center;
+  width:16px;
+  height: 16px;
+}
